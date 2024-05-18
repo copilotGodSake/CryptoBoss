@@ -24,7 +24,6 @@ export function Feed() {
     if (data !== undefined) {
       setSortedData(data);
     }
-    console.log(data);
   }, [data]);
 
   const handleSort = (column: keyof Coin) => {

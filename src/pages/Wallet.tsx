@@ -2,13 +2,10 @@ import { useContext, useEffect, useState } from "react";
 import { Navbar } from "../components/Navbar";
 import {
   Button,
-  Card,
   Col,
-  Divider,
   Drawer,
   DrawerProps,
   Flex,
-  Grid,
   Layout,
   Radio,
   RadioChangeEvent,
@@ -22,9 +19,8 @@ import { ModalWallet } from "../modals/ModalWallet";
 import { ThemeContext } from "../context/ThemeContext";
 import { AddAssetWallet } from "../components/walletComponents/AddAssetWallet";
 import { AssetSiderCard } from "../components/walletComponents/AssetSiderCard";
-import Sider from "antd/es/layout/Sider";
-import { Content } from "antd/es/layout/layout";
-import { WalletContext } from "../context/WalletContext";
+
+import { CardProps, WalletContext } from "../context/WalletContext";
 import { WalletPortfolioChart } from "../components/walletComponents/WalletPortfolioChart";
 import { Footer } from "../components/Footer";
 
@@ -100,7 +96,10 @@ export function Wallet() {
   };
 
   //total value of all assets
-  const totalValue = card.reduce((acc, item) => acc + item.totalAmount, 0);
+  const totalValue = card.reduce(
+    (acc: number, item: CardProps) => acc + item.totalAmount,
+    0
+  );
   return (
     <>
       <div

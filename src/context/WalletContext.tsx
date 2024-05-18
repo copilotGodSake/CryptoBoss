@@ -118,7 +118,7 @@ export function ContextWallet({ children }: { children: React.ReactNode }) {
 
     // Delete the card from the existing cards
     const updatedCards = existingCards.filter(
-      (_, cardIndex) => cardIndex !== index
+      (_: number, cardIndex: number) => cardIndex !== index
     );
 
     // Store the updated cards back into localStorage
